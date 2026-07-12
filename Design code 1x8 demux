@@ -1,0 +1,21 @@
+//design code 
+module demux1x8_gate(i,s2,s1,s0,y0,y1,y2,y3,y4,y5,y6,y7);
+input i,s2,s1,s0;
+output y0,y1,y2,y3,y4,y5,y6,y7;
+
+wire s2_bar,s1_bar,s0_bar;
+not(s2_bar,s2);
+not(s1_bar,s1);
+not(s0_bar,s0);
+and(y0,i,s2_bar,s1_bar,s0_bar);
+and(y1,i,s2_bar,s1_bar,s0);
+and(y2,i,s2_bar,s1,s0_bar);
+and(y3,i,s2_bar,s1,s0);
+and(y4,i,s2,s1_bar,s0_bar);
+and(y5,i,s2,s1_bar,s0);
+and(y6,i,s2,s1,s0_bar);
+and(y7,i,s2,s1,s0);
+
+endmodule
+  
+
